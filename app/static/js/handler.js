@@ -231,7 +231,6 @@ function checkValidity() {
 async function startTimer(duration) {
     return new Promise((resolve, reject) => {
         $("#js-progress-bar  .progress-bar__text").text(duration)
-        $("#js-progress-bar  .progress-bar__text")
         var timeout = setTimeout(function () {
             var time = duration;
             var i = 1;
