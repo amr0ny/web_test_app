@@ -1,8 +1,10 @@
 from flask import Blueprint, jsonify, session, request
 import random
 from time import time
+from config import sample
 
 api_v1 = Blueprint('api_v1', __name__, url_prefix='/api/v1')
+
 def compose(sample):
     question = {}
     if session['question_number'] >= 6:
@@ -85,22 +87,6 @@ def verify(sample, data):
         session['correct_answers'] += 1
     session['question_number'] += 1
     return response
-
-
-sample = {
-    'a': 'middle', 
-    'b': 'low', 
-    'c': 'high',
-    'd': 'middle',
-    'e': 'low',
-    'f': 'high',
-    'g': 'middle',
-    'h': 'middle',
-    'i': 'low',
-    'r': 'high',
-    'k': 'middle',
-}
-
 
 @api_v1.route('/question', methods=['GET', 'POST'])
 def question_data():

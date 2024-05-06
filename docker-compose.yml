@@ -7,6 +7,8 @@ services:
     env_file:
       - .env
     entrypoint: "uwsgi --strict --ini uwsgi.ini"
+    volumes:
+      - ${PWD}/csv:/opt/test_web_app/csv/:rw
     
   nginx:
     image: nginx:latest
