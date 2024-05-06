@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} 1 {% endblock %}
+{% block content %}
+<div class="wrapper">
+    <div class="content-box wrapper__content">
+        <div id="js-question-container" class="field-box content-box__question-box">
+            <div class="field-box__left">
+                <div class="info-box question-box__info-box">
+                    <div id="js-number" class="info-box__text text text_s"></div>
+                </div>
+            </div>
+            <div class="field-box__center">
+                <div class="message-box question-box__message">
+                    <div id="js-indicator" class="message-box__catchy-title text text_xl"></div>
+                </div>
+                <div id="js-message" class="message-box__text text text_l"></div>
+                <div id="js-tip" class="message-box__tip text text_s text_round catchy-highlight"></div>
+            </div>
+            <div class="field-box__right">
+                <div id="js-progress" class="info-box question-box__info-box info-progress">
+                </div>
+            </div>
+        </div>
+        <form id="form" class="form content-box__form" method="post">
+            <div id="js-container" class="options-list content-box__options-box">
+            </div>
+            <input id="js-submit-button" type="submit" value="Далее" class="field-box content-box__submit-button submit-button text text_m"/>
+        </form>
+    </div>
+    <div class="modal-box-container">
+        <div id="js-validity-modal-box" class="modal-box">
+          <div class="modal-box__icon"></div>
+          <div class="modal-box__title text text_m">Вы не ответили на вопрос</div>
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock %}
