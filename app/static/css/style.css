@@ -45,12 +45,17 @@ body {
     font-size: 36px;
 }
 
+:root {
+    --field-box--width: 960px;
+    --field-box--padding: 6px;
+    --option-item-margin: 5px;
+}
 .field-box {
     display: flex;
     background-color: #fff;
-    width: 700px;
+    width: var(--field-box--width);
     justify-content: space-between;
-    padding: 6px;
+    padding: var(--field-box--padding);
     border-radius: 13px;
 }
 
@@ -89,6 +94,7 @@ body {
     height: 25px;
     margin-top: 20px;
     border-radius: 25px;
+    text-align: center;
 }
 
 .info-box {
@@ -105,7 +111,6 @@ body {
     width: 110px;
     height: 40px;
 }
-
 
 
 .info-progress__question {
@@ -164,7 +169,7 @@ body {
 
 .options-list[data-count="4"] .options-list__option-item,
 .options-list[data-count="6"] .options-list__option-item {
-    width: 341.5px;
+    width: calc(calc(var(--field-box--width) - calc(2 * var(--field-box--padding) + var(--option-item-margin)))/2);
 }
 
 .options-list__option-item_correct {
@@ -205,13 +210,11 @@ body {
 
 .content-box__question-box {
     margin-bottom: 5px;
-}
-.content-box__question-box {
     height: 220px;
 } 
 .content-box__submit-button {
     height: 62px;
-    width: 712px;
+    width: calc(var(--field-box--width) + calc(2 * var(--field-box--padding)));
 }
 
 .field-box__left, .field-box__right {
@@ -409,4 +412,65 @@ body {
   stroke-width: 10;
   stroke-linecap: round;
   fill: transparent;
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+    :root {
+        --field-box--width: 641px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 640px) {
+    :root {
+        --field-box--width: 481px;
+    }
+    .content-box__question-box_result .message-box__tip {
+        width: 261px;
+        height: 40px;
+    }
+    .message-box__tip {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    :root {
+        --field-box--width: 320px;
+    }
+    .text_s {
+        font-size: 11px;
+    }
+
+    .text_m {
+        font-size: 16px;
+    }
+    .text_l {
+        font-size: 15px;
+    }
+    .message-box__tip {
+        width: 140px;
+        margin-top: 10px;
+    }
+    .message-box__chart {
+        --size: 140px;
+    }
+    .question-box__info-box {
+        width: 90px;
+        height: 30px;
+    }
+
+    .info-progress__question {
+        width: 23px;
+        height: 23px;
+    }
+    .message-box__catchy-title {
+        margin-bottom: 10px;
+    }
+    .text_s {
+        font-size: 9px;
+    }
+    .content-box__question-box_result .message-box__tip {
+        width: 140px;
+        height: 32px;
+    }
 }

@@ -34,6 +34,10 @@ function updateProgress() {
     length = $('#js-progress').children().length
     startPos = 7;
     offset = 14;
+    if ($(window).width() < 480) {
+        offset = 11
+    }
+
     var questionItem = $('<div>').addClass('info-progress__question info-progress__question_neutral')
     .css('left', `${startPos + (length)*offset}px`);
     $('#js-progress').append(questionItem)
