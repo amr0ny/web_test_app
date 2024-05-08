@@ -458,7 +458,9 @@ body {
         width: 90px;
         height: 30px;
     }
-
+    .modal-box {
+        max-width: 250px;
+    }
     .info-progress__question {
         width: 23px;
         height: 23px;

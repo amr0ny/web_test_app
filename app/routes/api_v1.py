@@ -23,7 +23,14 @@ def compose(sample):
                 question['tip'] = 'Несколько вариантов ответа'
                 question['obj'] = random.choice(letter_types)
                 question['msg'] = f'Выберите буквы класса {question['obj']}'
-                question['options'] = random.sample(list(sample.keys()), random.choice([4, 6]))
+                valid = False
+                while not valid:
+                    question['options'] = random.sample(list(sample.keys()), random.choice([4, 6]))
+                    for letter in question['options']:
+                        if sample[letter] == question['obj']:
+                            valid = True
+                
+
             case 'single':
                 question['tip'] = 'Один вариант ответа'
                 question['obj'] = random.choice(list(sample.keys()))
